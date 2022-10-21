@@ -25,7 +25,7 @@ var loginRequest = { scopes: ["openid", "profile", "User.Read", "Calendars.ReadW
                 auth: {
                     clientId: "2da12d3f-b8a4-402c-a335-37714c452408",
                     authority: "https://login.microsoftonline.com/6022b001-3112-4886-87c4-bfcbaebe61a2",
-                    redirectUri: "https://localhost:44328/MessageRead.html"
+                    redirectUri: "https://manel480.github.io/addIn/MessageRead.html"
                 },
                 cache: {
                     cacheLocation: "sessionStorage",
