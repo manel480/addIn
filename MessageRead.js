@@ -36,7 +36,7 @@ var loginRequest = { scopes: ["openid", "profile", "User.Read", "Calendars.ReadW
         );
         if (!myMSALObj.getAccount()) {
 		console.log("Cuenta: " + myMSALObj.getAccount());
-            myMSALObj.loginPopup(loginRequest)
+            myMSALObj.loginRedirect(loginRequest)
                 .then(loginResponse => {
                     if (myMSALObj.getAccount()) {
 			   
