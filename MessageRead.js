@@ -25,7 +25,8 @@ var loginRequest = { scopes: ["openid", "profile", "User.Read", "Calendars.ReadW
                 auth: {
                     clientId: "2da12d3f-b8a4-402c-a335-37714c452408",
                     authority: "https://login.microsoftonline.com/6022b001-3112-4886-87c4-bfcbaebe61a2",
-                    redirectUri: "https://manel480.github.io/addIn/MessageRead.html"
+                    redirectUri: "https://manel480.github.io/addIn/MessageRead.html",
+		    navigateToLoginRequestUrl: true,
                 },
                 cache: {
                     cacheLocation: "sessionStorage",
@@ -34,9 +35,11 @@ var loginRequest = { scopes: ["openid", "profile", "User.Read", "Calendars.ReadW
             }
         );
         if (!myMSALObj.getAccount()) {
+		console.log(myMSALObj.getAccount());
             myMSALObj.loginPopup(loginRequest)
                 .then(loginResponse => {
                     if (myMSALObj.getAccount()) {
+			    console.log(myMSALObj.getAccount());
                         showWelcomeMessage(myMSALObj.getAccount());
                         
                     }
@@ -45,6 +48,7 @@ var loginRequest = { scopes: ["openid", "profile", "User.Read", "Calendars.ReadW
                 });
         }
         else {
+		console.log(myMSALObj.getAccount());
             showWelcomeMessage(myMSALObj.getAccount());
           
         }
