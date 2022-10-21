@@ -35,11 +35,11 @@ var loginRequest = { scopes: ["openid", "profile", "User.Read", "Calendars.ReadW
             }
         );
         if (!myMSALObj.getAccount()) {
-		console.log(myMSALObj.getAccount());
+		console.log("Cuenta: " + myMSALObj.getAccount());
             myMSALObj.loginPopup(loginRequest)
                 .then(loginResponse => {
                     if (myMSALObj.getAccount()) {
-			    console.log(myMSALObj.getAccount());
+			   
                         showWelcomeMessage(myMSALObj.getAccount());
                         
                     }
@@ -48,7 +48,7 @@ var loginRequest = { scopes: ["openid", "profile", "User.Read", "Calendars.ReadW
                 });
         }
         else {
-		console.log(myMSALObj.getAccount());
+		
             showWelcomeMessage(myMSALObj.getAccount());
           
         }
